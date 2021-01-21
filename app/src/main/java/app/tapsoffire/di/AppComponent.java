@@ -3,14 +3,15 @@ package app.tapsoffire.di;
 import android.app.Application;
 
 import app.tapsoffire.TapsOfFire;
-import app.tapsoffire.activity.MainMenuActivity;
+import app.tapsoffire.ui.activity.ActivityBase;
+import app.tapsoffire.ui.activity.MainMenuActivity;
 import app.tapsoffire.device.BuildInfo;
 import dagger.BindsInstance;
 import dagger.Component;
 import javax.inject.Singleton;
 
 @Singleton
-@Component(modules = {AppModule.class})
+@Component(modules = { AppModule.class })
 public interface AppComponent {
 
     @Component.Builder
@@ -23,6 +24,9 @@ public interface AppComponent {
 
         AppComponent build();
     }
+
+
+    void inject(ActivityBase activity);
 
     void inject(MainMenuActivity activity);
 

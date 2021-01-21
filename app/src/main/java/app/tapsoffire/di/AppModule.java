@@ -3,27 +3,32 @@ package app.tapsoffire.di;
 import android.app.Application;
 import android.content.Context;
 
-import app.tapsoffire.TapsOfFire;
+import app.tapsoffire.configuration.Config;
+import app.tapsoffire.device.BuildInfo;
+import app.tapsoffire.log.AndroidLogger;
+import app.tapsoffire.log.Logger;
 import dagger.Module;
 import dagger.Provides;
 
 @Module
 public class AppModule {
 
-    private final TapsOfFire app;
+    private Application application;
 
-    public AppModule(TapsOfFire app) {
-        this.app = app;
+    @Provides
+    public Application provideApplication(Application application) {
+        this.application = application;
+        return application;
     }
 
     @Provides
-    public Application provideApplication() {
-        return app;
-    }
-
-    @Provides
-    public Context provideContext(Application application) {
+    public Context provideContext() {
         return application.getApplicationContext();
+    }
+
+    @Provides
+    public Logger provideLogger() {
+        return new AndroidLogger();
     }
 
 }

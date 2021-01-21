@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ScrollView">
+    <LinearLayout
+        android:id="@+id/layout"
+        style="@style/FlippingPage"
+        android:orientation="vertical">
+
+        <app.tapsoffire.ui.FTextView
+            style="@style/HeadText"
+            android:text="Welcome" />
+
+        <TextView
+            style="@style/ParagraphText"
+            android:text="Welcome 1"/>
+
+    </LinearLayout>
+</ScrollView>

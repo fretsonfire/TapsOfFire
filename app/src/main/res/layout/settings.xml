@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PageFlipper"
+    android:id="@+id/page_flipper"
+    android:background="@drawable/settings_background">
+
+
+    <ScrollView style="@style/ScrollView">
+        <LinearLayout
+            android:id="@+id/layout"
+            style="@style/FlippingPage"
+            android:orientation="vertical">
+
+            <app.tapsoffire.ui.FTextView android:id="@+id/head"
+                style="@style/HeadText"
+                android:text="Settings" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</ViewFlipper>
