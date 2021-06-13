@@ -3,17 +3,16 @@ package app.tapsoffire.ui;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.widget.EditText;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import javax.inject.Inject;
 
 import app.tapsoffire.R;
 import app.tapsoffire.configuration.Config;
 
-public class FEditText extends EditText {
+public class FEditText extends AppCompatEditText {
 
     @Inject protected Config config;
-
 
     public FEditText(Context context) {
         super(context);

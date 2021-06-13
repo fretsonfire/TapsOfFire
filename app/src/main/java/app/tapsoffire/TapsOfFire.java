@@ -23,7 +23,7 @@ public class TapsOfFire extends Application {
 
     @Nullable public static AppComponent appComponent;
 
-    @Inject  protected BuildInfo buildInfo;
+    @Inject protected BuildInfo buildInfo;
 
     @Override
     protected void attachBaseContext(Context base) {
