@@ -12,7 +12,8 @@
             style="@style/FlippingPage"
             android:orientation="vertical">
 
-            <app.tapsoffire.ui.FTextView android:id="@+id/head"
+            <app.tapsoffire.ui.components.FTextView
+                android:id="@+id/head"
                 style="@style/HeadText"
                 android:text="Settings" />
 

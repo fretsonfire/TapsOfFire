@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import app.tapsoffire.TapsOfFire;
 import app.tapsoffire.configuration.Config;
 import app.tapsoffire.R;
+import app.tapsoffire.ui.helpers.UISoundEffects;
 import app.tapsoffire.utils.UIHelpers;
 
 public abstract class ActivityBase extends Activity {
@@ -29,11 +30,13 @@ public abstract class ActivityBase extends Activity {
     private ViewFlipper m_pageFlipper;
 
     @Inject protected Config config;
+    @Inject protected UISoundEffects uiSoundEffects;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TapsOfFire.getAppComponent().inject(this);
         super.onCreate(savedInstanceState);
+        uiSoundEffects.load(this);
     }
 
     @Override

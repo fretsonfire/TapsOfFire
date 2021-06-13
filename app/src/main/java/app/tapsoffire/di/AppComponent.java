@@ -6,6 +6,7 @@ import app.tapsoffire.TapsOfFire;
 import app.tapsoffire.ui.activity.ActivityBase;
 import app.tapsoffire.ui.activity.MainMenuActivity;
 import app.tapsoffire.device.BuildInfo;
+import app.tapsoffire.ui.helpers.UISoundEffects;
 import dagger.BindsInstance;
 import dagger.Component;
 import javax.inject.Singleton;
@@ -31,4 +32,6 @@ public interface AppComponent {
     void inject(MainMenuActivity activity);
 
     void inject(TapsOfFire app);
+
+    void inject(UISoundEffects uiSoundEffects);
 }

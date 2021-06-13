@@ -1,4 +1,4 @@
-package app.tapsoffire.ui;
+package app.tapsoffire.ui.components;
 
 import android.content.Context;
 import android.content.res.TypedArray;

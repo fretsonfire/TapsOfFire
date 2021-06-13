@@ -33,6 +33,7 @@ public class Config {
         static final String TARGET_FPS = "targetFPS";
         static final String TOUCH_HANDLER_SLEEP = "touchHandlerSleep";
         static final String SHOW_DEBUG_INFO = "showDebugInfo";
+        static final String FIRST_TIME = "firstTime";
 
         static final String LEAK_CANARY = "leakCanary";
     }
@@ -42,7 +43,7 @@ public class Config {
 
     private static final String PREFERENCES = "settings";
 
-    private final int VOLUME_MENU = 0;
+    public static final int VOLUME_MENU = 0;
     private final int VOLUME_SONG = 1;
     private final int VOLUME_GUITAR = 2;
     private final int VOLUME_SCREWUP = 3;
@@ -223,5 +224,12 @@ public class Config {
         return prefs.getBoolean(Name.LEAK_CANARY, false);
     }
 
+    public void setFirstTime(boolean firstTime) {
+        putBoolean(Name.FIRST_TIME, firstTime);
+    }
+
+    public boolean isFirstTime() {
+        return prefs.getBoolean(Name.FIRST_TIME, true);
+    }
 
 }
