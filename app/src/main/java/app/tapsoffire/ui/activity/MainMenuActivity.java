@@ -4,6 +4,8 @@ import app.tapsoffire.R;
 import app.tapsoffire.configuration.Config;
 import app.tapsoffire.ui.helpers.UIHelpers;
 import app.tapsoffire.ui.helpers.UISoundEffects;
+
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -65,7 +67,15 @@ public class MainMenuActivity extends ActivityBase implements View.OnClickListen
 
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case R.id.play_first_time:
+                checkUpdateFirstTime(true);
+                break;
+            case R.id.play:
+                if (checkUpdateFirstTime(true)) {
+                    flipToPage(PAGE_WELCOME, true);
+                } else {
+                    startActivity(new Intent(this, BrowserActivity.class));
+                }
         }
     }
 
@@ -82,7 +92,7 @@ public class MainMenuActivity extends ActivityBase implements View.OnClickListen
 
     protected void doPageAction(int page, int action) {
         if (page == PAGE_WELCOME && action == PAGEACTION_INITIALIZE) {
-
+            findViewById(R.id.play_first_time).setOnClickListener(this);
         }
     }
 

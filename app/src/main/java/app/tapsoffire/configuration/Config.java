@@ -168,7 +168,7 @@ public class Config {
         return new File(rootPath, "songs");
     }
 
-    public String getSongDBFileName() {
+    public static String getSongDBFileName() {
         return "songs.db";
     }
 
